@@ -3,21 +3,13 @@ package dominio.entidades;
 public class Turno {
     private int numero;
     private String fecha;
-    private int horaInicio;
-    private int minutoInicio;
-    private int horaFinalizacion;
-    private int minutoFinalizacion;
+    private FormatoHorario inicio;
+    private FormatoHorario fin;
 
     private Paciente paciente;
     private Medico medico;
 
-    public Turno(Paciente paciente, int numeroDeTurno) {
-        numero = numeroDeTurno;
-        this.paciente = paciente;
-    }
-
     public Turno() {
-
     }
 
     public void finalTurno(Paciente p, int numero) {
@@ -29,19 +21,17 @@ public class Turno {
         return paciente.getDni();
     }
 
-    public void inicializarParametros(String fecha, int horaInicio, int minutoInicio, int horaFinal, int minutoFinal, Medico medico) {
+    public void inicializarParametros(String fecha, FormatoHorario inicio,FormatoHorario fin, Medico medico) {
         this.fecha = fecha;
-        this.horaInicio = horaInicio;
-        this.minutoInicio = minutoInicio;
-        this.horaFinalizacion = horaFinal;
-        this.minutoFinalizacion = minutoFinal;
+        this.inicio = inicio;
+        this.fin = fin;
         this.medico = medico;
     }
 
     @Override
     public String toString() {
-        return horaInicio + ":" + minutoMayorADiez(minutoInicio) + " a " +
-                horaFinalizacion + ":" + minutoMayorADiez(minutoFinalizacion);
+        return inicio.getHora() + ":" + minutoMayorADiez(inicio.getMinuto()) + " a " +
+                fin.getHora() + ":" + minutoMayorADiez(fin.getMinuto());
     }
 
     public String minutoMayorADiez(long minutoEntrada) {
@@ -51,10 +41,9 @@ public class Turno {
             return String.valueOf(minutoEntrada);
     }
 
-    public void agregarHorario(String formatFecha, int horaEntrada, int minutoEntrada, int horaFinalizacion, int minutoFinalizacion, Medico medico) {
-        inicializarParametros(formatFecha, horaEntrada, minutoEntrada, horaFinalizacion, minutoFinalizacion, medico);
+    public void agregarHorario(String formatFecha,FormatoHorario inicio,FormatoHorario fin,Medico medico){
+        inicializarParametros(fecha, inicio, fin, medico);
     }
-
     public int getIdMedico() {
         return medico.idPersonal;
     }
@@ -64,10 +53,31 @@ public class Turno {
     }
 
     public int getHoraInicio() {
-        return horaInicio;
+        return inicio.getHora();
     }
 
     public int getMinutoInicio() {
-        return minutoInicio;
+        return inicio.getMinuto();
+    }
+
+    boolean noSupera(FormatoHorario turnoTemporal, FormatoHorario turnoSalida) {
+        boolean primero = turnoTemporal.getHora() < turnoSalida.getHora();//horaFinalizacion < horaSalida;
+        boolean segundo = turnoTemporal.getHora() == turnoSalida.getHora() && 
+                turnoTemporal.getMinuto() < turnoSalida.getMinuto();
+        return primero || segundo;
+    }
+
+    FormatoHorario horaFin(FormatoHorario turnoEntrada,int reglaDuracion) {
+        int minuto = turnoEntrada.getMinuto() + reglaDuracion;
+        int hora = turnoEntrada.getHora();
+        if(seCumpleLaHora(minuto)){
+            minuto -=60;
+            hora +=1;
+        }
+        return new FormatoHorario(hora, minuto);
+    }
+
+    private static boolean seCumpleLaHora(int minuto) {
+        return minuto >= 60;
     }
 }

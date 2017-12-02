@@ -3,46 +3,29 @@ package dominio.entidades;
 import java.util.ArrayList;
 
 public class PlanTurno {
+
     ArrayList<DiaDeTrabajo> diasDeTrabajo = new ArrayList<>();
 
-    public void agregarDiaDeTrabajo(EDias dia, int horaDesde, int minutoDesde, int horaHasta, int minutoHasta) {
-        diasDeTrabajo.add(new DiaDeTrabajo(dia, horaDesde, minutoDesde, horaHasta, minutoHasta));
+    public void agregarDiaDeTrabajo(EDias dia, FormatoHorario inicio, FormatoHorario fin) {
+        diasDeTrabajo.add(new DiaDeTrabajo(dia, inicio, fin));
     }
 
-    public int getHoraEntrada(EDias dia) {
+    public FormatoHorario getInicio(EDias dia) {
         for (DiaDeTrabajo trabajo : diasDeTrabajo) {
             if (trabajo.dia == dia) {
-                return trabajo.horaDesde;
+                return trabajo.inicio;
             }
         }
-        return -1;
+        return null;
     }
 
-    public int getMinutoEntrada(EDias dia) {
+    public FormatoHorario getFin(EDias dia) {
         for (DiaDeTrabajo trabajo : diasDeTrabajo) {
             if (trabajo.dia == dia) {
-                return trabajo.minutoDesde;
+                return trabajo.salida;
             }
         }
-        return -1;
-    }
-
-    public int getHoraSalida(EDias dia) {
-        for (DiaDeTrabajo trabajo : diasDeTrabajo) {
-            if (trabajo.dia == dia) {
-                return trabajo.horaHasta;
-            }
-        }
-        return -1;
-    }
-
-    public int getMinutoSalida(EDias dia) {
-        for (DiaDeTrabajo trabajo : diasDeTrabajo) {
-            if (trabajo.dia == dia) {
-                return trabajo.minutoHasta;
-            }
-        }
-        return -1;
+        return null;
     }
 
     public boolean trabajaElDia(EDias dia) {
@@ -54,21 +37,16 @@ public class PlanTurno {
         return false;
     }
 
-
     private class DiaDeTrabajo {
+
         EDias dia;
-        int horaDesde;
-        int minutoDesde;
-        int horaHasta;
-        int minutoHasta;
+        FormatoHorario inicio;
+        FormatoHorario salida;
 
-        public DiaDeTrabajo(EDias dia, int horaDesde, int minutoDesde, int horaHasta, int minutoHasta) {
+        public DiaDeTrabajo(EDias dia, FormatoHorario inicio, FormatoHorario salida) {
             this.dia = dia;
-            this.horaDesde = horaDesde;
-            this.minutoDesde = minutoDesde;
-            this.horaHasta = horaHasta;
-            this.minutoHasta = minutoHasta;
+            this.inicio = inicio;
+            this.salida = salida;
         }
-
     }
 }
