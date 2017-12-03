@@ -1,57 +1,90 @@
 package datos;
 
 import dominio.contratosRepositorios.RepositorioMedico;
+import dominio.contratosRepositorios.RepositorioUsuario;
 import dominio.entidades.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
 public class RepositorioMedicoMySQL implements RepositorioMedico {
-
-    private ArrayList<Medico> medicos;
+    private RepositorioUsuario repositorio;
+    private Connection conexion;
 
     public RepositorioMedicoMySQL() {
-        inicializarMedicos();
+        conexion = DBConection.iniciarConexion();
     }
 
     @Override
     public void agregarMedico(Medico medico) {
-        medicos.add(medico);
+        throw new NotImplementedException();
     }
 
     @Override
     public ArrayList<Medico> obtenerMedicos() {
-        return medicos;
+        ArrayList<Medico> temp = new ArrayList<>();
+        repositorio = new RepositorioUsuarioMySQL();
+        String sql = "Select * from medicos ";
+        try {
+            Statement st = conexion.createStatement();
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                Medico medico = (Medico) repositorio.buscarPersonal(res.getInt("idPersonal"));
+                temp.add(medico);
+                st.close();
+                return temp;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositorioMedicoMySQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     @Override
     public ArrayList<Medico> obtnerMedicosDe(EEspecialidades especialidad) {
         ArrayList<Medico> temp = new ArrayList<>();
-        for (Medico m : medicos) {
-            if (m.getEspecialidad() == especialidad) {
-                temp.add(m);
+        repositorio = new RepositorioUsuarioMySQL();
+        String sql = "Select * from medicos where especialidad = " + especialidad.ordinal();
+        try {
+            Statement st = conexion.createStatement();
+            ResultSet res = st.executeQuery(sql);
+            while (res.next()) {
+                Medico medico = (Medico) repositorio.buscarPersonal(res.getInt("idPersonal"));
+                temp.add(medico);
+                st.close();
+                return temp;
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositorioMedicoMySQL.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return temp;
+        return null;
     }
 
     @Override
     public Medico obtenerMedico(int idMedico) {
-        for (Medico m : medicos) {
-            if (m.idPersonal() == idMedico) {
-                return m;
+        String sql = "Select * from medicos where idPersonal = " + idMedico;
+        try {
+            Statement st = conexion.createStatement();
+            ResultSet res = st.executeQuery(sql);
+            if(res.first()){
+                EEspecialidades especialidad = EEspecialidades.values()[res.getInt("especialidad")];
+                st.close();
+                return new Medico(especialidad,planTurnoMabel());
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositorioMedicoMySQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
 
 
-    private void inicializarMedicos() {
-        medicos = new ArrayList<>();
-        ERol rol = ERol.MEDICO;
-        agregarMedico(new Medico(1, "Adolfo", 1, rol, EEspecialidades.CIRUJANO_PLASTICO, planTurnoAdolfo()));
-        agregarMedico(new Medico(2, "Berta", 2, rol, EEspecialidades.NEUROLOGO, planTurnoMabel()));
-    }
 
     private PlanTurno planTurnoMabel() {
         PlanTurno planTurno = new PlanTurno();
@@ -61,11 +94,4 @@ public class RepositorioMedicoMySQL implements RepositorioMedico {
         return planTurno;
     }
 
-    private PlanTurno planTurnoAdolfo() {
-        PlanTurno planTurno = new PlanTurno();
-        planTurno.agregarDiaDeTrabajo(EDias.MARTES,new FormatoHorario(11, 0),new FormatoHorario(14, 0));
-        planTurno.agregarDiaDeTrabajo(EDias.JUEVES,new FormatoHorario(17, 0),new FormatoHorario(19, 0));
-        planTurno.agregarDiaDeTrabajo(EDias.SABADO,new FormatoHorario(19, 30),new FormatoHorario(21, 30));
-        return planTurno;
-    }
 }
