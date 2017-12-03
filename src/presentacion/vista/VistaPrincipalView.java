@@ -78,7 +78,7 @@ public class VistaPrincipalView extends javax.swing.JFrame implements VistaPrinc
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     @Override
     public void añadirFuncionesMedico() {
@@ -116,7 +116,10 @@ public class VistaPrincipalView extends javax.swing.JFrame implements VistaPrinc
 
     @Override
     public void añadirFuncionesEnfermera() {
-
+        JMenuItem cerrarSesion = new JMenuItem();
+        cerrarSesion.setText("Cerrar Sesion");
+        menu.add(cerrarSesion);
+        cerrarSesion.addActionListener(evt -> cerrarSesionSeleccion());
     }
 
     @Override
