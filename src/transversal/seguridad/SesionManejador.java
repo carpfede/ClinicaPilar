@@ -16,11 +16,9 @@ public class SesionManejador {
     }
 
     public Sesion validarUsuario(int id, int pw) {
-        ArrayList<Usuario> usuarios = repositorioUsuario.obtenerUsuarios();
-        for (Usuario usuario : usuarios) {
-            if ((usuario.getContraseña() == pw) && (usuario.getIdUsuario() == id))
+        Usuario usuario = repositorioUsuario.buscarUsuario(id);
+            if ((usuario.getIdUsuario() == id))
                 return new Sesion(usuario);
-        }
         return null;
     }
 }

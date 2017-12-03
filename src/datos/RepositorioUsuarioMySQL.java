@@ -32,4 +32,13 @@ public class RepositorioUsuarioMySQL implements RepositorioUsuario {
     public ArrayList<Usuario> obtenerUsuarios() {
         return usuarios;
     }
+
+    @Override
+    public Usuario buscarUsuario(int id) {
+        for (Usuario usuario : usuarios) {
+            if ((usuario.getIdUsuario() == id))
+                return usuario;
+        }
+        return null;
+    }
 }
