@@ -50,10 +50,10 @@ public class RepositorioMedicoMySQL implements RepositorioMedico {
         medicos = new ArrayList<>();
         ERol rol = ERol.MEDICO;
         agregarMedico(new Medico(1, "Adolfo", 1, rol, EEspecialidades.CIRUJANO_PLASTICO, planTurnoAdolfo()));
-        agregarMedico(new Medico(2, "Berta", 2, rol, EEspecialidades.NEUROLOGO, planTurnoBerta()));
+        agregarMedico(new Medico(2, "Berta", 2, rol, EEspecialidades.NEUROLOGO, planTurnoMabel()));
     }
 
-    private PlanTurno planTurnoBerta() {
+    private PlanTurno planTurnoMabel() {
         PlanTurno planTurno = new PlanTurno();
         planTurno.agregarDiaDeTrabajo(EDias.LUNES,new FormatoHorario(19, 0),new FormatoHorario(21, 0));
         planTurno.agregarDiaDeTrabajo(EDias.MIERCOLES,new FormatoHorario(17, 0),new FormatoHorario(19, 0));

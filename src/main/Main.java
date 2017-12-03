@@ -2,6 +2,7 @@ package main;
 
 import aplicacion.coordinadorCU.AutenticacionManejador;
 import dominio.entidades.ArchivoConfiguracion;
+import dominio.entidades.DBConection;
 import presentacion.vista.IniciarSesionView;
 import transversal.seguridad.SesionManejador;
 
