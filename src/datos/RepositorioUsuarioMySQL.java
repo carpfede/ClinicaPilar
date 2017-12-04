@@ -12,7 +12,6 @@ import main.FactoriaDeConfiguracion;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class RepositorioUsuarioMySQL implements RepositorioUsuario {
 
@@ -28,7 +27,7 @@ public class RepositorioUsuarioMySQL implements RepositorioUsuario {
 
     @Override
     public ArrayList<Usuario> obtenerUsuarios() {
-        throw new NotImplementedException();
+        return null;
     }
 
     @Override

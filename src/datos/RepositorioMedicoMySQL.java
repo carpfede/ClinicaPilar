@@ -11,7 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
 public class RepositorioMedicoMySQL implements RepositorioMedico {
@@ -24,7 +23,6 @@ public class RepositorioMedicoMySQL implements RepositorioMedico {
 
     @Override
     public void agregarMedico(Medico medico) {
-        throw new NotImplementedException();
     }
 
     @Override
