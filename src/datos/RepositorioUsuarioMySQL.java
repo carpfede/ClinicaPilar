@@ -12,43 +12,27 @@ import main.FactoriaDeConfiguracion;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class RepositorioUsuarioMySQL implements RepositorioUsuario {
 
     private RepositorioMedico repositorioMedico;
     private Connection conexion;
     private Statement statement;
-    private ArrayList<Usuario> usuarios;
 
     public RepositorioUsuarioMySQL() {
         this.repositorioMedico = FactoriaDeConfiguracion.getRepositorioMedico();
         conexion = DBConection.iniciarConexion();
-        inicializarUsuarios();
     }
 
-    private void inicializarUsuarios() {
-        usuarios = new ArrayList<>();
-        ArrayList<Medico> medicos = repositorioMedico.obtenerMedicos();
-        usuarios.add(new Usuario(1, 1, medicos.get(0)));
-        usuarios.add(new Usuario(2, 2, medicos.get(1)));
-        Personal enfermera1 = new Enfermera(3, "Marta", 3, ERol.ENFERMERA);
-        usuarios.add(new Usuario(3, 3, enfermera1));
-        Personal secretaria1 = new Secretaria(4, "Lucila", 4, ERol.SECRETARIA);
-        usuarios.add(new Usuario(4, 4, secretaria1));
-    }
 
     @Override
     public ArrayList<Usuario> obtenerUsuarios() {
-        return usuarios;
+        throw new NotImplementedException();
     }
 
     @Override
     public Usuario buscarUsuario(int id) {
-//        for (Usuario usuario : usuarios) {
-//            if ((usuario.getIdUsuario() == id))
-//                return usuario;
-//        }
-//        return null;
         String sql = "Select * from usuarios where id= " + id;
         ResultSet res;
         try {
@@ -57,6 +41,7 @@ public class RepositorioUsuarioMySQL implements RepositorioUsuario {
             if (res.first()) {
                 Personal personal = buscarPersonal(res.getInt("idPersonal"));
                 int pw = res.getInt("contraseña");
+                statement.close();
                 return new Usuario(id, pw, personal);
             }
         } catch (SQLException ex) {
@@ -78,10 +63,15 @@ public class RepositorioUsuarioMySQL implements RepositorioUsuario {
                 ERol rol = ERol.values()[res.getInt("rol")];
                 switch(rol){
                     case ENFERMERA:
+                        statement.close();
                         return new Enfermera(id, nombre, dni, rol);
                     case MEDICO:
-                        return repositorioMedico.obtenerMedico(id);
+                    Medico medico = repositorioMedico.obtenerMedico(id);
+                    medico.parametros(id,nombre,dni,rol);
+                    statement.close();
+                        return medico;
                     case SECRETARIA:
+                        statement.close();
                         return new Secretaria(id, nombre, dni, rol);
                 }
             }

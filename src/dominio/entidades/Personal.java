@@ -6,6 +6,9 @@ public abstract class Personal {
     protected int dni;
     protected ERol rol;
 
+    public Personal() {
+    }
+
     public Personal(int idPersonal, String nombre, int dni, ERol rol) {
         this.idPersonal = idPersonal;
         this.nombre = nombre;

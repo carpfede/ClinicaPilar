@@ -13,6 +13,11 @@ public class Medico extends Personal {
         this.especialidad = especialidad;
         this.planTurno = planTurno;
     }
+    
+    public Medico(EEspecialidades especialidad, PlanTurno planTurnoMabel) {
+        this.especialidad = especialidad;
+        this.planTurno = planTurnoMabel;
+    }
 
     public EEspecialidades getEspecialidad() {
         return especialidad;
@@ -96,5 +101,12 @@ public class Medico extends Personal {
 
     private int reglaDuracionDeTurno() {
         return ArchivoConfiguracion.duracionDelTurno();
+    }
+
+    public void parametros(int id, String nombre, int dni, ERol rol) {
+        this.idPersonal = id;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.rol = rol;
     }
 }
