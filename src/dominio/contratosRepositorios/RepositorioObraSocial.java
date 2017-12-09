@@ -1,6 +1,6 @@
 package dominio.contratosRepositorios;
 
-import dominio.entidades.ObraSocial;
+import dominio.entidades.pacientes.ObraSocial;
 
 import java.util.ArrayList;
 

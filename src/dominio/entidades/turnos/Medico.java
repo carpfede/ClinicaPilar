@@ -1,5 +1,9 @@
-package dominio.entidades;
+package dominio.entidades.turnos;
 
+import dominio.entidades.EEspecialidades;
+import dominio.entidades.ERol;
+import dominio.entidades.Personal;
+import main.ArchivoConfiguracion;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

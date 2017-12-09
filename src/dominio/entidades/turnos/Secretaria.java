@@ -1,4 +1,7 @@
-package dominio.entidades;
+package dominio.entidades.turnos;
+
+import dominio.entidades.ERol;
+import dominio.entidades.Personal;
 
 public class Secretaria extends Personal {
     public Secretaria(int idPersonal, String nombre, int dni, ERol rol) {

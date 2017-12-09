@@ -2,8 +2,6 @@ package main;
 
 import datos.*;
 import dominio.contratosRepositorios.*;
-import dominio.entidades.CargadorArchivoLog;
-import dominio.entidades.ArchivoConfiguracion;
 import dominio.entidades.RegistroLog;
 
 public class FactoriaDeConfiguracion {

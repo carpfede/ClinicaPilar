@@ -1,7 +1,7 @@
 package presentacion.interfaces;
 
-import dominio.entidades.Medico;
-import dominio.entidades.Turno;
+import dominio.entidades.turnos.Medico;
+import dominio.entidades.turnos.Turno;
 
 import java.util.ArrayList;
 

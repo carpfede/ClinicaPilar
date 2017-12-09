@@ -1,4 +1,6 @@
-package dominio.entidades;
+package dominio.entidades.turnos;
+
+import dominio.entidades.pacientes.Paciente;
 
 public class Turno {
     private int numero;

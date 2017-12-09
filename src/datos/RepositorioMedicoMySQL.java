@@ -1,5 +1,10 @@
 package datos;
 
+import dominio.entidades.turnos.EDias;
+import dominio.entidades.turnos.Medico;
+import dominio.entidades.turnos.FormatoHorario;
+import dominio.entidades.turnos.PlanTurno;
+import main.DBConection;
 import dominio.contratosRepositorios.RepositorioMedico;
 import dominio.contratosRepositorios.RepositorioUsuario;
 import dominio.entidades.*;

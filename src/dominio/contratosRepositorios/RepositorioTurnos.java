@@ -1,6 +1,6 @@
 package dominio.contratosRepositorios;
 
-import dominio.entidades.Turno;
+import dominio.entidades.turnos.Turno;
 
 import java.util.ArrayList;
 

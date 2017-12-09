@@ -2,8 +2,8 @@ package presentacion.interfaces;
 
 import aplicacion.coordinadorCU.AsignarTurnoManejador;
 import aplicacion.coordinadorCU.BuscarPacienteManejador;
-import dominio.entidades.ObraSocial;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.ObraSocial;
+import dominio.entidades.pacientes.Paciente;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package dominio.entidades;
+package main;
 
 import java.io.FileInputStream;
 import java.io.IOException;

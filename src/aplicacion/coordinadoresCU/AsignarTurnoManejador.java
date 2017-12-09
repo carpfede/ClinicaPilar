@@ -3,9 +3,9 @@ package aplicacion.coordinadorCU;
 import dominio.contratosRepositorios.RepositorioMedico;
 import dominio.contratosRepositorios.RepositorioTurnos;
 import dominio.entidades.EEspecialidades;
-import dominio.entidades.Medico;
-import dominio.entidades.Paciente;
-import dominio.entidades.Turno;
+import dominio.entidades.turnos.Medico;
+import dominio.entidades.pacientes.Paciente;
+import dominio.entidades.turnos.Turno;
 import main.FactoriaDeConfiguracion;
 
 import java.util.ArrayList;

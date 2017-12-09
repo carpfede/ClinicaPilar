@@ -3,7 +3,7 @@ package presentacion.presentador;
 import aplicacion.coordinadorCU.AsignarTurnoManejador;
 import aplicacion.coordinadorCU.BuscarPacienteManejador;
 import aplicacion.coordinadorCU.RegistrarPacienteManejador;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.Paciente;
 import presentacion.interfaces.BuscarPaciente;
 import presentacion.vista.BuscarPacienteView;
 

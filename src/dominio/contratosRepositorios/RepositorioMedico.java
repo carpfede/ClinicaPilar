@@ -1,7 +1,7 @@
 package dominio.contratosRepositorios;
 
 import dominio.entidades.EEspecialidades;
-import dominio.entidades.Medico;
+import dominio.entidades.turnos.Medico;
 
 import java.util.ArrayList;
 

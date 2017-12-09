@@ -1,7 +1,7 @@
 package aplicacion.coordinadorCU;
 
 import dominio.contratosRepositorios.RepositorioPaciente;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.Paciente;
 import main.FactoriaDeConfiguracion;
 
 public class BuscarPacienteManejador {

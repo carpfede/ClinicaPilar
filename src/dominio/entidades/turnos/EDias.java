@@ -1,4 +1,4 @@
-package dominio.entidades;
+package dominio.entidades.turnos;
 
 public enum EDias {
     DOMINGO(0),

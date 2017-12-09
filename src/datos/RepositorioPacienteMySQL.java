@@ -2,9 +2,9 @@ package datos;
 
 import dominio.contratosRepositorios.RepositorioObraSocial;
 import dominio.contratosRepositorios.RepositorioPaciente;
-import dominio.entidades.AfiliacionObraSocial;
-import dominio.entidades.DBConection;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.AfiliacionObraSocial;
+import main.DBConection;
+import dominio.entidades.pacientes.Paciente;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

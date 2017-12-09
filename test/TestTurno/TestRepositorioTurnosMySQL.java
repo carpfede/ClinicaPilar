@@ -1,7 +1,7 @@
 package TestTurno;
 
 import dominio.contratosRepositorios.RepositorioTurnos;
-import dominio.entidades.Turno;
+import dominio.entidades.turnos.Turno;
 import main.FactoriaDeConfiguracion;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;

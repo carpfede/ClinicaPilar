@@ -1,7 +1,7 @@
 package dominio.entidades;
 
 public abstract class Personal {
-    protected int idPersonal;
+    public int idPersonal;
     protected String nombre;
     protected int dni;
     protected ERol rol;

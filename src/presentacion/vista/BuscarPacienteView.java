@@ -3,7 +3,7 @@ package presentacion.vista;
 import aplicacion.coordinadorCU.AsignarTurnoManejador;
 import aplicacion.coordinadorCU.BuscarPacienteManejador;
 import aplicacion.coordinadorCU.RegistrarPacienteManejador;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.Paciente;
 import dominio.entidades.Sesion;
 import presentacion.interfaces.BuscarPaciente;
 import presentacion.presentador.BuscarPacientePresentador;
@@ -15,7 +15,7 @@ public class BuscarPacienteView extends JFrame implements BuscarPaciente {
 
     BuscarPacientePresentador presentador;
     Sesion usuario;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private JButton btnBuscar;
     private JButton btnCerrar;
     private JLabel jLabel2;
@@ -74,7 +74,7 @@ public class BuscarPacienteView extends JFrame implements BuscarPaciente {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void btnBuscarActionPerformed(ActionEvent e) {
         presentador.buscarPaciente(getDni());

@@ -1,7 +1,7 @@
 package transversal.operaciones;
 
-import dominio.entidades.ArchivoConfiguracion;
-import dominio.entidades.Paciente;
+import main.ArchivoConfiguracion;
+import dominio.entidades.pacientes.Paciente;
 import dominio.entidades.RegistroLog;
 
 import java.io.BufferedWriter;

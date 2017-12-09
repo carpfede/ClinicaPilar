@@ -1,7 +1,7 @@
 package datos;
 
 import dominio.contratosRepositorios.RepositorioObraSocial;
-import dominio.entidades.ObraSocial;
+import dominio.entidades.pacientes.ObraSocial;
 
 import java.util.ArrayList;
 

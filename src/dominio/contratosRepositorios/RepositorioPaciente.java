@@ -1,6 +1,6 @@
 package dominio.contratosRepositorios;
 
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.Paciente;
 
 public interface RepositorioPaciente {
     Paciente buscarPaciente(int dni);

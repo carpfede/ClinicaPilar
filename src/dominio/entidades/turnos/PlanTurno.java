@@ -1,4 +1,4 @@
-package dominio.entidades;
+package dominio.entidades.turnos;
 
 import java.util.ArrayList;
 

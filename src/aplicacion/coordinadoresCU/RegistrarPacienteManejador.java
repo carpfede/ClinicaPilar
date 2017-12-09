@@ -2,8 +2,8 @@ package aplicacion.coordinadorCU;
 
 import dominio.contratosRepositorios.RepositorioObraSocial;
 import dominio.contratosRepositorios.RepositorioPaciente;
-import dominio.entidades.ObraSocial;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.ObraSocial;
+import dominio.entidades.pacientes.Paciente;
 import dominio.entidades.RegistroLog;
 import main.FactoriaDeConfiguracion;
 

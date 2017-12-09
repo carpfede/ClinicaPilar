@@ -1,4 +1,4 @@
-package dominio.entidades;
+package dominio.entidades.pacientes;
 
 public class AfiliacionObraSocial {
     private ObraSocial obraSocial;

@@ -1,4 +1,6 @@
-package dominio.entidades;
+package main;
+
+import dominio.entidades.RegistroLog;
 
 public class CargadorArchivoLog {
     public static final String PREFIJO_CLASE = "transversal.operaciones.";

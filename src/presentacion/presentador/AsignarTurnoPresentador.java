@@ -1,5 +1,9 @@
 package presentacion.presentador;
 
+import dominio.entidades.turnos.EDias;
+import dominio.entidades.turnos.Medico;
+import dominio.entidades.turnos.Turno;
+import dominio.entidades.pacientes.Paciente;
 import aplicacion.coordinadorCU.AsignarTurnoManejador;
 import aplicacion.coordinadorCU.BuscarPacienteManejador;
 import dominio.entidades.*;

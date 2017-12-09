@@ -1,5 +1,8 @@
 package datos;
 
+import dominio.entidades.turnos.Medico;
+import dominio.entidades.turnos.Secretaria;
+import main.DBConection;
 import dominio.contratosRepositorios.RepositorioMedico;
 import dominio.contratosRepositorios.RepositorioUsuario;
 import dominio.entidades.*;

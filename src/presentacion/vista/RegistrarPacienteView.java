@@ -3,9 +3,9 @@ package presentacion.vista;
 import aplicacion.coordinadorCU.AsignarTurnoManejador;
 import aplicacion.coordinadorCU.BuscarPacienteManejador;
 import aplicacion.coordinadorCU.RegistrarPacienteManejador;
-import dominio.entidades.AfiliacionObraSocial;
-import dominio.entidades.ObraSocial;
-import dominio.entidades.Paciente;
+import dominio.entidades.pacientes.AfiliacionObraSocial;
+import dominio.entidades.pacientes.ObraSocial;
+import dominio.entidades.pacientes.Paciente;
 import presentacion.interfaces.RegistrarPaciente;
 import presentacion.presentador.RegistrarPacientePresentador;
 
