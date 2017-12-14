@@ -1,6 +1,6 @@
 package presentacion.presentador;
 
-import aplicacion.coordinadorCU.AutenticacionManejador;
+import aplicacion.coordinadoresCU.AutenticacionManejador;
 import dominio.entidades.Sesion;
 import presentacion.interfaces.InicioSesion;
 

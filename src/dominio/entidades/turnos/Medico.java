@@ -89,7 +89,7 @@ public class Medico extends Personal {
         Turno turno = new Turno();
         FormatoHorario horaInicio = turnoEntrada;
         while(turno.noSupera(horaInicio,turnoSalida)){
-            FormatoHorario horaFin = turno.horaFin(horaInicio,reglaDuracionDeTurno());
+            FormatoHorario horaFin = turno.seCumplioLaHora(horaInicio,reglaDuracionDeTurno());
             String formatFecha = formatoDeFecha(fecha);
             turno.agregarHorario(formatFecha, horaInicio, horaFin, this);            
             temporal.add(turno);

@@ -1,6 +1,6 @@
 package main;
 
-import aplicacion.coordinadorCU.AutenticacionManejador;
+import aplicacion.coordinadoresCU.AutenticacionManejador;
 import presentacion.vista.IniciarSesionView;
 import transversal.seguridad.SesionManejador;
 

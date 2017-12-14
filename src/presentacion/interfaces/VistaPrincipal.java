@@ -1,6 +1,6 @@
 package presentacion.interfaces;
 
-import aplicacion.coordinadorCU.BuscarPacienteManejador;
+import aplicacion.coordinadoresCU.BuscarPacienteManejador;
 
 public interface VistaPrincipal {
     void añadirFuncionesMedico();

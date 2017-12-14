@@ -1,4 +1,4 @@
-package aplicacion.coordinadorCU;
+package aplicacion.coordinadoresCU;
 
 import dominio.entidades.Sesion;
 import transversal.seguridad.SesionManejador;

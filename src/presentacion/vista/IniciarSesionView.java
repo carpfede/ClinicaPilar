@@ -5,7 +5,7 @@
  */
 package presentacion.vista;
 
-import aplicacion.coordinadorCU.AutenticacionManejador;
+import aplicacion.coordinadoresCU.AutenticacionManejador;
 import dominio.entidades.Sesion;
 import presentacion.interfaces.InicioSesion;
 import presentacion.presentador.InicioSesionPresentador;
@@ -98,7 +98,7 @@ public class IniciarSesionView extends javax.swing.JFrame implements InicioSesio
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void salirDelSistema() {
         System.exit(0);
@@ -110,7 +110,7 @@ public class IniciarSesionView extends javax.swing.JFrame implements InicioSesio
 
         presentador.iniciarSesion(usuario, pw);
     }
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 
     private void diseñoPantalla() {
         setTitle("Inicio de Sesion");

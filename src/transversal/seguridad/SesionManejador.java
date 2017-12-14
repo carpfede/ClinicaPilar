@@ -17,6 +17,7 @@ public class SesionManejador {
 
     public Sesion validarUsuario(int id, int pw) {
         Usuario usuario = repositorioUsuario.buscarUsuario(id);
+        if(usuario != null)
             if ((usuario.getIdUsuario() == id))
                 return new Sesion(usuario);
         return null;

@@ -1,4 +1,4 @@
-package aplicacion.coordinadorCU;
+package aplicacion.coordinadoresCU;
 
 import dominio.contratosRepositorios.RepositorioPaciente;
 import dominio.entidades.pacientes.Paciente;

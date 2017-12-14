@@ -1,6 +1,6 @@
 package presentacion.vista;
 
-import aplicacion.coordinadorCU.BuscarPacienteManejador;
+import aplicacion.coordinadoresCU.BuscarPacienteManejador;
 import dominio.entidades.Sesion;
 import main.Main;
 import presentacion.interfaces.VistaPrincipal;

@@ -7,7 +7,6 @@ public class Turno {
     private String fecha;
     private FormatoHorario inicio;
     private FormatoHorario fin;
-
     private Paciente paciente;
     private Medico medico;
 
@@ -55,6 +54,7 @@ public class Turno {
     public void agregarHorario(String formatFecha,FormatoHorario inicio,FormatoHorario fin,Medico medico){
         inicializarParametros(formatFecha, inicio, fin, medico);
     }
+    
     public int getIdMedico() {
         return medico.idPersonal;
     }
@@ -79,14 +79,14 @@ public class Turno {
         return fin.getMinuto();
     }
     
-    boolean noSupera(FormatoHorario turnoTemporal, FormatoHorario turnoSalida) {
+    public boolean noSupera(FormatoHorario turnoTemporal, FormatoHorario turnoSalida) {
         boolean primero = turnoTemporal.getHora() < turnoSalida.getHora();//horaFinalizacion < horaSalida;
         boolean segundo = turnoTemporal.getHora() == turnoSalida.getHora() && 
                 turnoTemporal.getMinuto() < turnoSalida.getMinuto();
         return primero || segundo;
     }
 
-    FormatoHorario horaFin(FormatoHorario turnoEntrada,int reglaDuracion) {
+    public FormatoHorario seCumplioLaHora(FormatoHorario turnoEntrada,int reglaDuracion) {
         int minuto = turnoEntrada.getMinuto() + reglaDuracion;
         int hora = turnoEntrada.getHora();
         if(seCumpleLaHora(minuto)){
@@ -103,4 +103,9 @@ public class Turno {
     public int getNumero() {
         return numero;
     }
+
+    public int duracionReal() {
+        return (fin.getHora() * 60 + fin.getMinuto()) - (inicio.getHora() * 60 + inicio.getMinuto());
+    }
+
 }

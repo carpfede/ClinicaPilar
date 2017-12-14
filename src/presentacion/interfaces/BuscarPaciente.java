@@ -1,8 +1,6 @@
 package presentacion.interfaces;
 
-import aplicacion.coordinadorCU.AsignarTurnoManejador;
-import aplicacion.coordinadorCU.BuscarPacienteManejador;
-import aplicacion.coordinadorCU.RegistrarPacienteManejador;
+import aplicacion.coordinadoresCU.*;
 import dominio.entidades.pacientes.Paciente;
 
 public interface BuscarPaciente {

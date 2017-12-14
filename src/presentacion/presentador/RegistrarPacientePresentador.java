@@ -1,8 +1,8 @@
 package presentacion.presentador;
 
-import aplicacion.coordinadorCU.AsignarTurnoManejador;
-import aplicacion.coordinadorCU.BuscarPacienteManejador;
-import aplicacion.coordinadorCU.RegistrarPacienteManejador;
+import aplicacion.coordinadoresCU.AsignarTurnoManejador;
+import aplicacion.coordinadoresCU.BuscarPacienteManejador;
+import aplicacion.coordinadoresCU.RegistrarPacienteManejador;
 import dominio.entidades.pacientes.AfiliacionObraSocial;
 import dominio.entidades.pacientes.ObraSocial;
 import dominio.entidades.pacientes.Paciente;

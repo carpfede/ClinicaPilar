@@ -1,7 +1,7 @@
 package presentacion.vista;
 
-import aplicacion.coordinadorCU.AsignarTurnoManejador;
-import aplicacion.coordinadorCU.BuscarPacienteManejador;
+import aplicacion.coordinadoresCU.AsignarTurnoManejador;
+import aplicacion.coordinadoresCU.BuscarPacienteManejador;
 import dominio.entidades.EEspecialidades;
 import dominio.entidades.turnos.Medico;
 import dominio.entidades.pacientes.Paciente;
